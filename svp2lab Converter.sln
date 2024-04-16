@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "svp2lab Converter", "LabelConverterForAISinger\svp2lab Converter.csproj", "{080288C0-5A7D-4F36-BD00-1EBDED08A90D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "svp2lab Converter", "svp2lab Converter\svp2lab Converter.csproj", "{080288C0-5A7D-4F36-BD00-1EBDED08A90D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
