@@ -1,8 +1,7 @@
 # svp2lab Converter - DiffSinger・NNSVSラベリング支援システム
 
 ## これは何？
-DiffSingerのラベリングを、譜面ない！labの叩き台もない！wav以外なにもない！の状態から最速で終わらせる方法を模索した結果、
-Synthesizer V 有料版エディタの譜面起こし機能を使ったチートシステムを構築した。
+DiffSingerのラベリングを、譜面ない！labの叩き台もない！wav以外なにもない！の状態から最速で終わらせる方法を模索した結果、Synthesizer V 有料版エディタの譜面起こし機能を使ったチートシステムを構築した。
 
 ## サポート環境
 - Win10以降 64bit
@@ -10,6 +9,8 @@ Synthesizer V 有料版エディタの譜面起こし機能を使ったチート
 - Synthesizer V Studio Pro 1.11.0以降
 - 日本語曲で検証済み。理論上英語と中国語も可能（`replace config`要編集）。フィードバック求む。
 - SynthVスクリプトとコンソールアプリのセットです。mac対応を優先した結果GUIがなくなった。
+
+Download: https://github.com/maiko3tattun/svp2lab-Converter/releases
 
 ## ワークフローの概要
 1. 歌を録る（ENUNUの場合は補正もする）
