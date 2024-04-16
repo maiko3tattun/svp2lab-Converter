@@ -1,0 +1,18 @@
+sil	SP
+Sil	SP
+R	SP
+息	AP
+br	AP
+bre	AP
+breath	AP
+Edge	vf
+'	q
+’	vf
+・	q
+っ	cl
+cl a	q a
+cl i	q i
+cl u	q u
+cl e	q e
+cl o	q o
+cl N	q N

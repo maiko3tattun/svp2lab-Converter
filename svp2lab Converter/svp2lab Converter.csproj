@@ -12,4 +12,9 @@
     <PackageReference Include="YamlDotNet" Version="15.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="configs\" />
+    <Folder Include="synthv script\" />
+  </ItemGroup>
+
 </Project>

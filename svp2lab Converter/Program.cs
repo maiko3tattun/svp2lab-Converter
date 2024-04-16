@@ -50,7 +50,7 @@ while (true)
         Console.WriteLine("dsdict ok!");
     }*/
 
-    Console.WriteLine("replace config path:");
+    Console.WriteLine("Replace Config Path:");
     var replacePath = Console.ReadLine().Replace("\"", "");
     var repList = Replace.LoadFile(replacePath);
     if (repList == null)
@@ -65,7 +65,7 @@ while (true)
 
     var length = new List<LengthConfig>();
 
-    Console.WriteLine("length config path:");
+    Console.WriteLine("Length Config Path:");
     var lengthPath = Console.ReadLine().Replace("\"", "");
     var lenList = LengthConfig.LoadFile(lengthPath);
     if (lenList == null)
@@ -85,7 +85,7 @@ while (true)
     string path;
     while (true)
     {
-        Console.WriteLine("Wav path:");
+        Console.WriteLine("Wav Path:");
         path = Console.ReadLine().Replace("\"", "");
         if (File.Exists(path) && Path.GetExtension(path) == ".wav")
         {

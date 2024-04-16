@@ -1,0 +1,18 @@
+sil	pau
+Sil	pau
+R	pau
+息	pau
+br	pau
+bre	pau
+breath	pau
+vf	Edge
+'	GlottalStop
+’	Edge
+・	GlottalStop
+っ	cl
+cl a	GlottalStop a
+cl i	GlottalStop i
+cl u	GlottalStop u
+cl e	GlottalStop e
+cl o	GlottalStop o
+cl N	GlottalStop N
