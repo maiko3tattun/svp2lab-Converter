@@ -14,6 +14,13 @@
             {
                 if (string.IsNullOrWhiteSpace(x.Phonemes)) x.Phonemes = x.Lyric.Replace(".", "");
             });
+            for (int i = 1; i < Notes.Count; i++)
+            {
+                if (Notes[i].Phonemes == "-")
+                {
+                    Notes[i].Phonemes = Notes[i - 1].Phonemes.Trim().Split(" ").Last();
+                }
+            }
         }
     }
     
