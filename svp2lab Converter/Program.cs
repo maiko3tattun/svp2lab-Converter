@@ -9,7 +9,7 @@ while (true)
     Console.WriteLine("Hello Label Converter!");
     Console.WriteLine("");
     Console.WriteLine("これは何？：svpをlabにしたりustにしたりするよ");
-    Console.WriteLine("What is this?　: make lab or ust from svp");
+    Console.WriteLine("What is this? : make lab or ust from svp");
     Console.WriteLine("");
     Console.WriteLine("Paste from \"Copy Notes for Label Converter\" script:");
 
@@ -37,12 +37,13 @@ while (true)
 
     var replace = new List<Replace>();
     /*
+    dsdictを読もうとしてたけど子音のnが母音のNに変換されたりするのでやめた
     Console.WriteLine("dsdict.yaml path:");
     var dspath = Console.ReadLine().Replace("\"", "");
     Dsdict dsdict = YamlLoadUtil.LoadFile<Dsdict>(dspath);
     if (dsdict == null)
     {
-        Console.WriteLine("dsdictなしで続行します　Continue with no dsdict");
+        Console.WriteLine("dsdictなしで続行します　Continue without dsdict");
     }
     else
     {
@@ -50,12 +51,13 @@ while (true)
         Console.WriteLine("dsdict ok!");
     }*/
 
+    Console.WriteLine("");
     Console.WriteLine("Replace Config Path:");
     var replacePath = Console.ReadLine().Replace("\"", "");
     var repList = Replace.LoadFile(replacePath);
     if (repList == null)
     {
-        Console.WriteLine("replace configなしで続行します　Continue with no replace config");
+        Console.WriteLine("replace configなしで続行します　Continue without replace config");
     }
     else
     {
@@ -65,12 +67,13 @@ while (true)
 
     var length = new List<LengthConfig>();
 
+    Console.WriteLine("");
     Console.WriteLine("Length Config Path:");
     var lengthPath = Console.ReadLine().Replace("\"", "");
     var lenList = LengthConfig.LoadFile(lengthPath);
     if (lenList == null)
     {
-        Console.WriteLine("length configなしで続行します　Continue with no length config");
+        Console.WriteLine("length configなしで続行します　Continue without length config");
     }
     else
     {
@@ -98,7 +101,7 @@ while (true)
     {
         CreateLab(lab);
         Console.WriteLine("");
-        Console.WriteLine($"Output Succeed!");
+        Console.WriteLine("Output Succeed!");
         Console.WriteLine(lab);
     }
     catch (Exception ex)
