@@ -17,29 +17,33 @@ function getTranslations(langCode) {
   return [];
 }
 
-function main() {
+function output(){
   var scope = SV.getMainEditor().getCurrentGroup();
   var group = scope.getTarget();
   var phonemes = SV.getPhonemesForGroup(scope);
   var timeAxis = SV.getProject().getTimeAxis();
 
-  for(var i = 0; i < group.getNumNotes(); i ++) {
-    if (phonemes[i] === "") {
-      var results = SV.showOkCancelBox("Warning", "Voice Unselected or No Phoneme")
-      if (results) {
-        break;
-      } else {
-        SV.finish();
-      }
-    }
+  if (group.getNumNotes() == 0){
+    SV.showMessageBox("Warning", "No Notes or No Group Selected");
+    return;
   }
 
   var preEnd = 0;
   var output = "BPM: " + timeAxis.getTempoMarkAt(scope.getOnset()).bpm
-   + "\r\nNotes:\r\n";
+    + "\r\nNotes:\r\n";
 
+  var flag = true;
   for(var i = 0; i < group.getNumNotes(); i ++) {
     var note = group.getNote(i);
+
+    if (note.getLyrics() != "-" && phonemes[i] == "" && flag) {
+      var results = SV.showOkCancelBox("Warning", "Voice Unselected or No Phoneme");
+      if (results) {
+        flag = false;
+      } else {
+        return;
+      }
+    }
 
     if(note.getOnset() > preEnd){
       output += "- Onset: " + preEnd
@@ -57,8 +61,9 @@ function main() {
     + "\r\n  Tone: " + note.getPitch()
     + "\r\n";
 
-    preEnd = note.getEnd()
+    preEnd = note.getEnd();
   }
+
   output += "- Onset: " + preEnd
   + "\r\n  OnsetSec: " + timeAxis.getSecondsFromBlick(preEnd)
   + "\r\n  Lyric: R"
@@ -69,5 +74,9 @@ function main() {
 
   SV.setHostClipboard(output);
   SV.showMessageBox("", "Copy succeed!");
+}
+
+function main() {
+  output();
   SV.finish();
 }

@@ -96,20 +96,33 @@ while (true)
         }
         Console.WriteLine("それwavじゃないかも！");
     }
-    var lab = path.Replace(".wav", ".lab");
+
     try
     {
+        var lab = path.Replace(".wav", ".lab");
         CreateLab(lab);
         Console.WriteLine("");
         Console.WriteLine("Output Succeed!");
         Console.WriteLine(lab);
+
+        Console.WriteLine("");
+        Console.WriteLine("ustも出す？ y/n");
+        if (Console.ReadLine() == "y")
+        {
+            var ust = path.Replace(".wav", ".ust");
+            CreateUst(ust);
+            Console.WriteLine("");
+            Console.WriteLine("Output Succeed!");
+            Console.WriteLine(ust);
+            Console.ReadLine();
+        }
     }
     catch (Exception ex)
     {
         Console.WriteLine(ex.ToString());
+        Console.ReadLine();
     }
 
-    Console.ReadLine();
     Console.WriteLine("");
     Console.WriteLine("");
 
@@ -224,5 +237,30 @@ while (true)
 
         var labs = phonemes.Select(p => new Lab(p.phoneme, p.Start, p.End)).Select(l => l.ToString());
         File.WriteAllLines(path, labs);
+    }
+
+    void CreateUst(string path)
+    {
+        var ust = new List<string>
+        {
+            $"[#SETTING]",
+            $"UstVersion = 1.19",
+            $"Tempo={svp.BPM}",
+            $"Tracks=1",
+            $"ProjectName=",
+            $"VoiceDir=",
+            $"OutFile=",
+            $"CacheDir="
+        };
+
+        for (int i = 0; i < svp.Notes.Count; i++)
+        {
+            ust.Add($"[#{i}]");
+            ust.Add(svp.GetLength(i));
+            ust.Add(svp.GetLyric(i));
+            ust.Add(svp.GetTone(i));
+        }
+        ust.Add("[#TRACKEND]");
+        File.WriteAllLines(path, ust);
     }
 }
