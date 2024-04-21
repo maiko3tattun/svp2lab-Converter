@@ -20,7 +20,7 @@ Download: https://github.com/maiko3tattun/svp2lab-Converter/releases
 3. 同梱のSynthV scriptでノートをクリップボードにコピーする
 4. svp2lab Converterを使ってlabを生成　※音素は歌詞からの変換ではなく、SynthVの音素を使います
 5. vLabelerでラベリング
-6. 今後需要があればENUNU用のustエクスポートにも対応
+6. ENUNU用のustエクスポートにも対応。歌詞に音素直接表記なので他ツールとの相性が良くないかもしれない
 
 ## 有用性
 - SynthVの譜面起こしの精度が8割ぐらいなので、譜面作成=lab叩き台作成の手間が8割省ける
@@ -59,9 +59,11 @@ Download: https://github.com/maiko3tattun/svp2lab-Converter/releases
    - 子音長データ。Tab区切り・ミリ秒表記
    - replace config と Length Config は指定しなくても動作可能だが、ぐちゃぐちゃになるので非推奨
 9. `Wav Path:` →wavをドラッグアンドドロップして、Enterを押す
-10. wavの隣に`.lab`ファイルができる。続けてlab変換する場合はEnterを押すと6.に戻れる
-11. wavフォルダの隣にlabフォルダを作って、labファイルを移動
-12. vLabelerで曲名フォルダ（wavフォルダとlabフォルダが入ってるフォルダ）を選択してNNSVSラベラーのプロジェクトを作成。あとは普通にラベリング。
+10. "Output Succeed!" と表示されてwavの隣に`.lab`ファイルができる
+11. NNSVSの場合でustが必要であれば、`ustも出す？ y/n`に`y`と入力してEnterを押す。wavの隣に`.ust`ファイルができる
+12. 続けてlab変換する場合はEnterを押すと6.に戻れる
+13. wavフォルダの隣にlabフォルダを作って、labファイルを移動
+14. vLabelerで曲名フォルダ（wavフォルダとlabフォルダが入ってるフォルダ）を選択してNNSVSラベラーのプロジェクトを作成。あとは普通にラベリング。
 
 ## Welcome Contribute!
 - mac対応、英語・中国語対応が中途半端
