@@ -68,3 +68,9 @@ Download: https://github.com/maiko3tattun/svp2lab-Converter/releases
 ## Welcome Contribute!
 - mac対応、英語・中国語対応が中途半端
 - 深夜テンションで作ったのでノリがおかしい・コンソールの多言語化が中途半端
+
+### 作った人
+まいこ
+- Twitter: https://twitter.com/maiko3tattun
+- HP: https://maiko3tattun.wixsite.com/mysite
+- mail: maikotattun @yahoo.co.jp
