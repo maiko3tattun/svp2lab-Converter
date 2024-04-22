@@ -31,6 +31,7 @@ Download: https://github.com/maiko3tattun/svp2lab-Converter/releases
 0. インストール
    - `svp2lab Converter`のzipを適当な場所に展開。フリーソフトはProgramFilesに入れちゃだめって古事記にも書いてある。
    - `CopyNotesForLabelConverter.js`をSynthVのスクリプトフォルダにインストール。
+   - 他、便利なスクリプトをインストールしていると尚良し。うちのだと[「選択したノートを分割・歌詞も分割」「選択したノートをマージPlus(歌詞はマージしないver.)」「隙間にブレスを入れる」](https://drive.google.com/drive/folders/13YUromADAUrgNrRqJ8k7qAja627rYjXG?usp=sharing)あたりは必須。
 1. SynthVプロジェクトを作って歌のwavをインポートする。テンポを設定・wav開始位置を拍に合わせる（見やすいので）。
    - 歌は `音源名フォルダ > 表情名フォルダ > 曲名フォルダ > "wav"フォルダ`に入れておくとよい
    - wavは複数入れてもok。wav分だけボーカルトラックを作るか、1トラックに変換後のノートグループが重ならないで並ぶようにwavの位置をずらしておく
