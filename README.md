@@ -5,6 +5,18 @@ DiffSingerのラベリングを、譜面ない！labの叩き台もない！wav�
 
 デモンストレーション：https://twitter.com/maiko3tattun/status/1780263803219054866
 
+## DiffSinger ラベル生成ツールまとめ
+1. SynthVの譜面をlabにするツール（これ）
+   - メリット：譜面起こし時点でq（喉切り）が認識される・母音の位置は一致するはずなのでほぼ直さなくてよい・ENUNU用のustが出せる
+   - デメリット：濁音の判別精度が微妙・早口がダメ・子音位置は手動調整になる
+2. 歌詞を音素に変換してSOFAで自動ラベリング（[歌詞変換 for 歌声合成ソフト](https://ameblo.jp/maiko3utau/entry-12660767498.html)＋[LabelMakr](https://github.com/spicytigermeat/LabelMakr)）
+   - メリット：歌詞の誤検出をほぼ気にしなくてよい
+   - デメリット：q（喉切り）を手動で足す必要がありけっこう手間
+3. SynthVで譜面起こしした歌詞を音素に変換してSOFAで自動ラベリング（[スクリプト](https://x.com/maiko3tattun/status/1806633768389955743)＋[LabelMakr](https://github.com/spicytigermeat/LabelMakr)）
+   - メリット：譜面起こし時点でq（喉切り）が認識される・1に比べるとラベル位置の精度は若干高い
+   - デメリット：濁音の判別精度が微妙・早口がダメ
+4. 歌詞テキストにqを手動でちゃちゃっと足すツール（準備中）
+
 ## サポート環境
 - Win10以降 64bit
 - macOS 10.12以降 64bit（検証報告ください）
