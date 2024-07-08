@@ -9,13 +9,15 @@ DiffSingerのラベリングを、譜面ない！labの叩き台もない！wav�
 1. SynthVの譜面をlabにするツール（これ）
    - メリット：譜面起こし時点でq（喉切り）が認識される・母音の位置は一致するはずなのでほぼ直さなくてよい・ENUNU用のustが出せる
    - デメリット：濁音の判別精度が微妙・早口がダメ・子音位置は手動調整になる
-2. 歌詞を音素に変換してSOFAで自動ラベリング（[歌詞変換 for 歌声合成ソフト](https://ameblo.jp/maiko3utau/entry-12660767498.html)＋[LabelMakr](https://github.com/spicytigermeat/LabelMakr)）
+2. 歌詞を音素にそのまま変換してSOFAで自動ラベリング（[歌詞変換 for 歌声合成ソフト](https://ameblo.jp/maiko3utau/entry-12660767498.html)＋[LabelMakr](https://github.com/spicytigermeat/LabelMakr)）
    - メリット：歌詞の誤検出をほぼ気にしなくてよい
-   - デメリット：q（喉切り）を手動で足す必要がありけっこう手間・SOFAの精度も別に完璧ではない
+   - デメリット：q（喉切り）、無声化、「っ」の挿入を手動で編集する必要がありけっこう手間
+   - ラベル位置の精度は1と大して変わらない
 3. SynthVで譜面起こしした歌詞を音素に変換してSOFAで自動ラベリング（[スクリプト](https://x.com/maiko3tattun/status/1806633768389955743)＋[LabelMakr](https://github.com/spicytigermeat/LabelMakr)）
-   - メリット：譜面起こし時点でq（喉切り）が認識される・1に比べるとラベル位置の精度は若干高い
-   - デメリット：譜面起こし時点での濁音の判別精度が微妙・早口がダメ・SOFAの精度も別に完璧ではない
-4. 歌詞テキストにqを手動でちゃちゃっと足すツール（準備中）
+   - メリット：譜面起こし時点でq（喉切り）、無声化、「っ」が認識される
+   - デメリット：譜面起こし時点での濁音の判別精度が微妙・早口がダメ
+   - ラベル位置の精度は1と大して変わらない
+4. 歌詞テキストにqを手動でちゃちゃっと足すツール（準備中）＋SOFAで自動ラベリング
 
 ## サポート環境
 - Win10以降 64bit
@@ -30,7 +32,7 @@ Download: https://github.com/maiko3tattun/svp2lab-Converter/releases
 1. 歌を録る（ENUNUの場合は補正もする）
 2. SynthVのボーカルMIDI変換で譜面起こしする・歌詞の手動修正
 3. 同梱のSynthV scriptでノートをクリップボードにコピーする
-4. svp2lab Converterを使ってlabを生成　※音素は歌詞からの変換ではなく、SynthVの音素を使います
+4. svp2lab Converterを使ってlabを生成　※音素はノートの歌詞からの変換ではなく、SynthVの音素を使います
 5. vLabelerでラベリング
 6. ENUNU用のustエクスポートにも対応。歌詞に音素直接表記なので他ツールとの相性が良くないかもしれない
 
