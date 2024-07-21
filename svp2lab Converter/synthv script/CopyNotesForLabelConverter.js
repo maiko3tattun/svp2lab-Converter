@@ -73,7 +73,21 @@ function output(){
   + "\r\n";
 
   SV.setHostClipboard(output);
-  SV.showMessageBox("", "Copy succeed!");
+  var form = {
+    "title" : "",
+    "message" : "Copy succeed!",
+    "buttons" : "OkCancel",
+    "widgets" : [
+      {
+        "name" : "Copied text",
+        "type" : "TextArea",
+        "label" : "Copied text",
+        "height" : 100,
+        "default" : output,
+      }
+    ]
+  };
+  SV.showCustomDialog(form);
 }
 
 function main() {

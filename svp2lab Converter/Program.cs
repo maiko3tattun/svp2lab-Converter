@@ -4,6 +4,9 @@
 using svp2lab_Converter;
 using System.Text;
 
+string repPath = string.Empty;
+string lenPath = string.Empty;
+
 while (true)
 {
     Console.WriteLine("Hello Label Converter!");
@@ -30,8 +33,8 @@ while (true)
     if(svp == null)
     {
         Console.WriteLine("貼るもの間違えてね？");
-        Console.ReadLine();
-        continue;
+        Console.WriteLine("");
+        continue; // 冒頭に戻る
     }
     svp.FillPhoneme();
 
@@ -53,14 +56,28 @@ while (true)
 
     Console.WriteLine("");
     Console.WriteLine("Replace Config Path:");
+    if (!string.IsNullOrWhiteSpace(repPath))
+    {
+        Console.WriteLine("（指定しない場合は前回値を使用）");
+    }
     var replacePath = Console.ReadLine().Replace("\"", "");
     var repList = Replace.LoadFile(replacePath);
     if (repList == null)
     {
-        Console.WriteLine("replace configなしで続行します　Continue without replace config");
+        repList = Replace.LoadFile(repPath);
+        if (repList != null)
+        {
+            Console.WriteLine($"前回値を使用します：{repPath}");
+            replace.AddRange(repList);
+        }
+        else
+        {
+            Console.WriteLine("replace configなしで続行します　Continue without replace config");
+        }
     }
     else
     {
+        repPath = replacePath;
         replace.AddRange(repList);
         Console.WriteLine("replace config ok!");
     }
@@ -69,14 +86,29 @@ while (true)
 
     Console.WriteLine("");
     Console.WriteLine("Length Config Path:");
+    if (!string.IsNullOrWhiteSpace(lenPath))
+    {
+        Console.WriteLine("（指定しない場合は前回値を使用）");
+    }
     var lengthPath = Console.ReadLine().Replace("\"", "");
     var lenList = LengthConfig.LoadFile(lengthPath);
     if (lenList == null)
     {
-        Console.WriteLine("length configなしで続行します　Continue without length config");
+        lenList = LengthConfig.LoadFile(lenPath);
+        if (lenList != null)
+        {
+            Console.WriteLine($"前回値を使用します：{lenPath}");
+            length.AddRange(lenList);
+            lenList = lenList.OrderByDescending(l => l.Key.Length).ToList();
+        }
+        else
+        {
+            Console.WriteLine("length configなしで続行します　Continue without length config");
+        }
     }
     else
     {
+        lenPath = lengthPath;
         length.AddRange(lenList);
         lenList = lenList.OrderByDescending(l => l.Key.Length).ToList();
         Console.WriteLine("length config ok!");
@@ -115,6 +147,10 @@ while (true)
             Console.WriteLine("Output Succeed!");
             Console.WriteLine(ust);
             Console.ReadLine();
+        }
+        else
+        {
+            Console.WriteLine("OK");
         }
     }
     catch (Exception ex)
