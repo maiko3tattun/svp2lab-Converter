@@ -84,6 +84,11 @@ Download: https://github.com/maiko3tattun/svp2lab-Converter/releases
 - mac対応、英語・中国語対応が中途半端
 - 深夜テンションで作ったのでノリがおかしい・コンソールの多言語化が中途半端
 
+## 利用規約／Terms of Use
+- このツールを使用してSynthesizer Vのキャラクターの音声を学習させる等、趣旨に反する使い方は禁止します。
+- 本ツール・スクリプトを利用して発生した問題については一切責任を負いかねますのでご了承下さい。
+- 不具合報告はTwitter、メール、Discord、ここのIssue等に投げてください。サポート環境下であればできる限り対処しますので遠慮なくご連絡ください。
+
 ### 作った人
 まいこ
 - Twitter: https://twitter.com/maiko3tattun
